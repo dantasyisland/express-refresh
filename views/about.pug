@@ -1,0 +1,51 @@
+doctype html
+
+html
+head
+meta(charset='utf-8')
+meta(http-equiv='X-UA-Compatible', content='IE=edge')
+meta(name='description', content='Some description')
+meta(name='viewport', content='width=device-width, initial-scale=1')
+link(rel="stylesheet", href="./css/main.css")
+
+
+body
+- var colors = ['Blue','Purple','Red']
+- var age = 0;
+
+//- name variable interpolated ID of title
+p#title Hello from #{name}
+
+//- Interpolated function's return value className of title
+p.title Hello from the function getName() #{getName()}
+
+
+
+//- NO HASH FOR ARRAY - ALREADY DEFINED
+//- For or each - there is no difference
+ul
+  each color in {colorArray}
+    li= color
+
+ul
+  each color, index in ['Red', 'Yellow', 'Blue']
+    li= 'Color number ' + index + ': ' + color
+
+ul
+  each color in colors
+    li= color
+
+
+if name
+  h2 Hello from #{name}
+else if anotherName
+  h2 Hello from #{anotherName}
+else
+  h2 Hello
+
+
+p= name
+span.age= age
+br
+- age++
+span.age= age
